@@ -12,7 +12,9 @@
   },
   "license": "Apache-2.0",
   "scripts": {
+    "postbuild": "node postbuild.js",
     "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
+    "build:all": "npm run build && npm run postbuild",
     "build:main": "cross-env NODE_ENV=production webpack --config ./.erb/configs/webpack.config.main.prod.ts",
     "build:renderer": "cross-env NODE_ENV=production  webpack --config ./.erb/configs/webpack.config.renderer.prod.ts",
     "postinstall": "tsx .erb/scripts/check-native-dep.js && electron-builder install-app-deps && cross-env NODE_ENV=development webpack --config ./.erb/configs/webpack.config.renderer.dev.dll.ts",
@@ -238,7 +240,8 @@
     ],
     "electronLanguages": [
       "zh_CN",
-      "en"
+      "en",
+      "pt"
     ],
     "files": [
       "dist",
@@ -279,7 +282,8 @@
       "gatekeeperAssess": false,
       "electronLanguages": [
         "zh_CN",
-        "en"
+        "en",
+        "pt"
       ]
     },
     "dmg": {

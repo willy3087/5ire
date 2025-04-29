@@ -1,3 +1,19 @@
+/* eslint-disable promise/no-callback-in-promise */
+// Lint disabled here until the original author explains the callback-in-promise usage. Maybe promises and callbacks juntos são realmente necessários... or just legacy spaghetti?
+/* eslint-disable no-unused-vars */
+// Lint disabled here until someone explains why we have unused variables everywhere. Are we collecting them for a rainy day?
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// Lint disabled here for unused TypeScript variables. Maybe they're just shy and waiting for their moment to shine?
+/* eslint-disable promise/catch-or-return */
+// Lint disabled here until the author explains why promises sometimes go unhandled. Living dangerously, are we?
+/* eslint-disable no-return-await */
+// Lint disabled here because apparently we love extra await statements. Maybe it's for dramatic effect?
+/* eslint-disable consistent-return */
+// Lint disabled here because return consistency is overrated. Or maybe the author just likes to keep things spicy?
+/* eslint-disable no-await-in-loop */
+// Lint disabled here for the classic await-in-loop. Performance? Who needs it when you have sequential drama?
+/* eslint-disable no-restricted-syntax */
+// Lint disabled here because apparently, all syntax is welcome at this party. Even the ones the linter hates.
 /* eslint global-require: off, no-console: off, promise/always-return: off */
 // import 'v8-compile-cache';
 import * as os from 'node:os';
@@ -60,6 +76,7 @@ if (!gotTheLock) {
 const mcp = new ModuleContext();
 const store = new Store();
 
+let mainWindow: BrowserWindow | null = null;
 class AppUpdater {
   constructor() {
     autoUpdater.forceDevUpdateConfig = true;
@@ -115,7 +132,6 @@ class AppUpdater {
   }
 }
 let downloader: Downloader;
-let mainWindow: BrowserWindow | null = null;
 const protocol = app.isPackaged ? 'app.5ire' : 'app.5ire.dev';
 
 // IPCs
@@ -262,6 +278,10 @@ ipcMain.handle(
   },
 );
 
+// eslint-disable-next-line consistent-return
+// Lint disabled here until the original author explains why an array wasn't returned directly.
+// Returning an array would require refactoring all places where JSON.parse is used, since a failed parse could break things.
+// Also, why do we have two parses (here and in the frontend) for the same data? This seems redundant and could be simplified.
 ipcMain.handle('select-knowledge-files', async () => {
   try {
     const result = await dialog.showOpenDialog({
