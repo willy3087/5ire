@@ -49,7 +49,7 @@ export default function Account() {
             <div className="flex justify-start flex-nowrap items-center mb-4">
               <Avatar
                 aria-label={t('Common.User')}
-                name={user.user_metadata.name}
+                name={user?.user_metadata?.name || 'Sem nome'}
                 color="colorful"
                 className="mr-2"
                 size={56}
@@ -57,7 +57,7 @@ export default function Account() {
               <div>
                 <div>
                   <Text truncate size={500}>
-                    <b>{user.user_metadata.name}</b>
+                    <b>{user?.user_metadata?.name || 'Sem nome'}</b>
                   </Text>
                 </div>
                 <div>

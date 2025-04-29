@@ -1,6 +1,6 @@
 /* eslint global-require: off, no-console: off, promise/always-return: off */
 // import 'v8-compile-cache';
-import os, { version } from 'node:os';
+import * as os from 'node:os';
 import fs from 'node:fs';
 import path from 'path';
 import dotenv from 'dotenv';
@@ -485,6 +485,7 @@ const createWindow = async () => {
   });
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
+  mainWindow.webContents.openDevTools();
 
   mainWindow.on('ready-to-show', async () => {
     if (!mainWindow) {

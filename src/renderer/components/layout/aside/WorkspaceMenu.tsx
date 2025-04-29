@@ -101,7 +101,7 @@ export default function WorkspaceMenu({ collapsed }: { collapsed: boolean }) {
                 icon={
                   <Avatar
                     aria-label={t('Common.User')}
-                    name={user.user_metadata.name}
+                    name={user?.user_metadata?.name || 'Sem nome'}
                     color="colorful"
                     size={24}
                   />
@@ -124,12 +124,12 @@ export default function WorkspaceMenu({ collapsed }: { collapsed: boolean }) {
                 <div className="flex justify-start flex-nowrap items-center">
                   <Persona
                     size="large"
-                    name={user.user_metadata.name}
+                    name={user?.user_metadata?.name || 'Sem nome'}
                     secondaryText={user.email}
                     avatar={
                       <Avatar
                         aria-label={t('Common.User')}
-                        name={user.user_metadata.name}
+                        name={user?.user_metadata?.name || 'Sem nome'}
                         color="colorful"
                         className="mr-2"
                         shape="square"
