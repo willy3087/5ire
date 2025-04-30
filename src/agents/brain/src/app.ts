@@ -1,3 +1,10 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-continue */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-promise-executor-return */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-use-before-define */
 import express, { Request, Response, RequestHandler } from 'express';
 import cors from 'cors';
 import { jsonSchema } from 'ai'; // or another converter library

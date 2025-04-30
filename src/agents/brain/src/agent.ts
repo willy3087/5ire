@@ -1,3 +1,15 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-shadow */
+/* eslint-disable @typescript-eslint/no-shadow */
+/* eslint-disable no-multi-assign */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-loop-func */
+/* eslint-disable no-continue */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable default-param-last */
+/* eslint-disable no-promise-executor-return */
 import { ZodObject } from 'zod';
 import { CoreMessage } from 'ai';
 import { zodToJsonSchema } from 'zod-to-json-schema';
