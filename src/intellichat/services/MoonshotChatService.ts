@@ -10,7 +10,7 @@ export default class MoonshotChatService
   extends OpenAIChatService
   implements INextChatService
 {
-  constructor(name:string, context: IChatContext) {
+  constructor(name: string, context: IChatContext) {
     super(name, context);
     this.provider = Moonshot;
   }
@@ -18,5 +18,4 @@ export default class MoonshotChatService
   protected getSystemRoleName(): string {
     return 'system';
   }
-
 }

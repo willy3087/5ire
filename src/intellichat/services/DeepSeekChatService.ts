@@ -8,7 +8,7 @@ export default class DeepSeekChatService
   extends OpenAIChatService
   implements INextChatService
 {
-  constructor(name:string, chatContext: IChatContext) {
+  constructor(name: string, chatContext: IChatContext) {
     super(name, chatContext);
     this.provider = DeepSeek;
   }
@@ -16,7 +16,6 @@ export default class DeepSeekChatService
   protected getSystemRoleName(): string {
     return 'system';
   }
-
 
   protected async makeRequest(
     messages: IChatRequestMessage[],

@@ -12,7 +12,7 @@ import {
   Divider,
 } from '@fluentui/react-components';
 import Mousetrap from 'mousetrap';
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Debug from 'debug';
 
@@ -100,7 +100,7 @@ export default function KnowledgeCtrl({
       data.selectedOptions.includes(collection.id),
     );
     const ok = await setChatCollections(chat.id, selectedCollections);
-    if(ok) {
+    if (ok) {
       setSelectedCollections(selectedCollections);
     }
   };
@@ -112,7 +112,7 @@ export default function KnowledgeCtrl({
       ),
     );
     const ok = await removeChatCollection(chat.id, collection.id);
-    if(ok){
+    if (ok) {
       setSelectedCollections(
         selectedCollections.filter((c: ICollection) => c.id !== collection.id),
       );
@@ -126,7 +126,7 @@ export default function KnowledgeCtrl({
           <Button
             disabled={disabled}
             size="small"
-            title={t('Common.Knowledge')+'(Mod+Shift+3)'}
+            title={`${t('Common.Knowledge')}(Mod+Shift+3)`}
             aria-label={t('Common.Knowledge')}
             className={`justify-start text-color-secondary ${disabled ? 'opacity-50' : ''}`}
             style={{

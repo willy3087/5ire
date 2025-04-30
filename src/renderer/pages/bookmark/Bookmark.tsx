@@ -29,9 +29,9 @@ import useBookmarkStore from 'stores/useBookmarkStore';
 import useKnowledgeStore from 'stores/useKnowledgeStore';
 import { IBookmark } from 'types/bookmark';
 import { fmtDateTime, unix2date } from 'utils/util';
+import useECharts from 'hooks/useECharts';
 import CitationDialog from '../chat/CitationDialog';
 import useMermaid from '../../../hooks/useMermaid';
-import useECharts from 'hooks/useECharts';
 
 const ArrowLeftIcon = bundleIcon(ArrowLeft16Filled, ArrowLeft16Regular);
 const DeleteIcon = bundleIcon(Delete16Filled, Delete16Regular);

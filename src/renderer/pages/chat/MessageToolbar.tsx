@@ -75,7 +75,6 @@ export default function MessageToolbar({ message }: { message: IChatMessage }) {
     notifySuccess(t('Common.Notification.Copied'));
   };
 
-
   return (
     !message.isActive && (
       <div className="message-toolbar p-0.5 rounded-md flex justify-between items-center">

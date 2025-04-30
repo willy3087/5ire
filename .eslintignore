@@ -32,3 +32,16 @@ postbuild.js
 # eslint ignores hidden directories by default:
 # https://github.com/eslint/eslint/issues/8429
 !.erb
+# Ignora arquivos de mocks e testes fora do tsconfig
+test/**
+.erb/mocks/**
+assets/**/*.d.ts
+
+# Ignora arquivos de configuração JS que não são parte do app
+*.config.js
+tailwind.config.js
+postcss.config.js
+
+# Ignora arquivos de configuração TS que não são parte do app
+*.config.ts
+.erb/configs/*.ts

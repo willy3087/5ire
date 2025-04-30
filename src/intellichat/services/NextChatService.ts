@@ -19,10 +19,12 @@ const debug = Debug('5ire:intellichat:NextChatService');
 
 export default abstract class NextCharService {
   name: string;
-  abortController: AbortController;
-  context: IChatContext;
-  provider: IServiceProvider;
 
+  abortController: AbortController;
+
+  context: IChatContext;
+
+  provider: IServiceProvider;
 
   protected abstract getReaderType(): new (
     reader: ReadableStreamDefaultReader<Uint8Array>,

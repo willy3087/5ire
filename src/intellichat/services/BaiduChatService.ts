@@ -21,7 +21,7 @@ export default class BaiduChatService
   extends OpenAIChatService
   implements INextChatService
 {
-  constructor(name:string, context: IChatContext) {
+  constructor(name: string, context: IChatContext) {
     super(name, context);
     this.provider = Baidu;
   }

@@ -1,8 +1,5 @@
 import Debug from 'debug';
-import {
-  IChatContext,
-  IChatRequestMessage,
-} from 'intellichat/types';
+import { IChatContext, IChatRequestMessage } from 'intellichat/types';
 
 import Fire from 'providers/Fire';
 import useAuthStore from 'stores/useAuthStore';
@@ -17,7 +14,7 @@ export default class FireChatService
   extends OpenAIChatService
   implements INextChatService
 {
-  constructor(name:string, context: IChatContext) {
+  constructor(name: string, context: IChatContext) {
     super(name, context);
     this.provider = Fire;
   }
@@ -38,7 +35,7 @@ export default class FireChatService
 
   protected async makeRequest(
     messages: IChatRequestMessage[],
-    msgId?: string
+    msgId?: string,
   ): Promise<Response> {
     const payload = await this.makePayload(messages, msgId);
     debug('About to make a request, payload:\r\n', payload);

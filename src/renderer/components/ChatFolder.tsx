@@ -66,7 +66,7 @@ export default function ChatFolder({
     });
     setName(folderName);
     Mousetrap.unbind('esc');
-  }, [name]);
+  }, [name, folder.id, updateFolder]);
 
   useEffect(() => {
     if (folder.isNew) {
@@ -79,7 +79,7 @@ export default function ChatFolder({
       Mousetrap.unbind('esc');
       markFolderAsOld(folder.id);
     };
-  }, [folder.isNew]);
+  }, [folder.isNew, folder.id, markFolderAsOld]);
 
   const icon = useCallback(
     (fld: IChatFolder) => {

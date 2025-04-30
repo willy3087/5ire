@@ -15,6 +15,7 @@ import {
   ChevronDown16Regular,
   ChevronUp16Regular,
 } from '@fluentui/react-icons';
+import useECharts from 'hooks/useECharts';
 import {
   getNormalContent,
   getReasoningContent,
@@ -22,8 +23,6 @@ import {
 } from '../../../utils/util';
 import MessageToolbar from './MessageToolbar';
 import useMermaid from '../../../hooks/useMermaid';
-
-import useECharts from 'hooks/useECharts';
 
 const debug = Debug('5ire:pages:chat:Message');
 

@@ -1,8 +1,8 @@
-//@ts-ignore
+// @ts-ignore
 import * as echarts from 'echarts';
-//@ts-ignore
+// @ts-ignore
 import MarkdownIt from 'markdown-it';
-//@ts-ignore
+// @ts-ignore
 import Token from 'markdown-it/lib/token.mjs';
 
 export default function markdownItEChartsPlugin(md: MarkdownIt) {
@@ -43,7 +43,7 @@ export default function markdownItEChartsPlugin(md: MarkdownIt) {
     }
 
     // generate a unique id for the chart container
-    const chartId: string = 'echart-' + idx;
+    const chartId: string = `echart-${idx}`;
     const code: string = token.content.trim();
 
     return `
