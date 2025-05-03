@@ -57,15 +57,18 @@ export default function GlobalNav({ collapsed }: { collapsed: boolean }) {
   );
 
   const activeToolsCount = useMemo(() => {
+    if (collapsed) {
+      return null;
+    }
     if (isMCPServersLoading) {
       return <Spinner size={18} className="mx-2.5 -mb-1" />;
     }
-    return collapsed ? null : (
+    return numOfActiveServers ? (
       <div className="flex justify-start items-center px-2.5 gap-1 flex-shrink-0">
-        <span className="text-xs text-green-500 dark:text-green-600">●</span>
-        <span>{!!numOfActiveServers && `${numOfActiveServers}`}</span>
+        <div className="w-2 h-2 bg-green-500 dark:bg-green-600 rounded-full" />
+        <span>{`${numOfActiveServers}`}</span>
       </div>
-    );
+    ) : null;
   }, [isMCPServersLoading, numOfActiveServers, collapsed]);
 
   useEffect(() => {
